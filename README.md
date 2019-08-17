@@ -3,6 +3,10 @@ Extreme Program Framework
 This framework is aim at background micro services, and also include a preemptive web server balancer for this framework.
 framework is develop by C++ (11 and above) and Lua (5.3.4).
 
+Framework fit for online-games server(use internal protocol to communicate), also fit for http server(a ligit weight http server)
+
+Framework resolve the most painful problem of micro service, it's document. referenced springboot + swagger, framework also support generate docuemnt, as long as api's comment writed in a fixed format(support markdown), document would be generated and can be accept in web browser.
+
 Let's introduce how this framework working.
 
 # ep-midas

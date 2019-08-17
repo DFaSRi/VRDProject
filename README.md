@@ -57,20 +57,22 @@ Load-Balance is aim at the situation 1 excatly, but why we use situation 2? the 
 
 finally, we can't make a background service looks like:
 
-
-clients    clients     clients ...                   clients      clients     clients ...
-             |                                                       |
-             |                                                       |
-             |                                                       |
-          Balancer1 (side 1)                                     Balancer2 (side 2)
-             |                                                       |
-     -------------------------------------------------------------------------
-     |                 |                  |
-     |                 |                  |
-     |                 |                  |
-     |                 |                  |
-user service        money service       other service
-
+```
+-------------------------------------------------------------------------------------------------
+| clients    clients     clients ...                   clients      clients     clients ...
+|             |                                                       |
+|             |                                                       |
+|             |                                                       |
+|          Balancer1 (side 1)                                     Balancer2 (side 2)
+|             |                                                       |
+|     -------------------------------------------------------------------------
+|     |                 |                  |
+|     |                 |                  |
+|     |                 |                  |
+|     |                 |                  |
+| user service        money service       other service
+--------------------------------------------------------------------------------------------------
+```
 service can add in any time, and if the same service is in full-loaded, we can run one more same service for load-balance.
 between service and balancer, they would contain each status in every job transfer, so, in fact, balancer would do like:
 receive a job, find the queue, if queue is 0 size, push to a servvice to do, else put to queue. 

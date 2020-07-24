@@ -1,7 +1,9 @@
 # ep-framework
 Extreme Program Framework
 This framework is aim at background micro services, and also include a preemptive web server balancer for this framework.
-framework is develop by C++ (11 and above) and Lua (5.3.4).
+framework is develop by C++ (11 and above) and Lua (5.3.4) and Java (1.8),  PHP and JS is planning.
+framework main program is developed by C++, then inclue Lua as internal build.
+then using JNI to connect Java, C++ as a bridge between Lua and Java, we mainly using Lua to control Java libraries, so that we could have a big cross platform libraries while use this framework, if Lua don't have such an lib, then using Java's. (also support write a lib by yourself using C++ or Java).
 
 Framework fit for online-games server(use internal protocol to communicate), also fit for http server(a ligit weight http server)
 
@@ -46,7 +48,7 @@ this is simple, think about the situation:
      Boss: Jobs are overthere, just take it.
    
 2.   Boss: Are you free?
-   Wokers: yes, I'm.
+     Wokers: yes, I'm.
      Boss: take this job to do.
     
 situation 1, it means workers would keep get job as long as finished then current job.
